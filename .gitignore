@@ -1,0 +1,5 @@
+.venv
+venv
+results/generated_graphs/*
+__pycache__/
+*.py[cod]
