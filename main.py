@@ -8,8 +8,8 @@ N        = 10
 N_RUNS   = 10 
 EPSILONS = [1.0, 2.0, 4.0, 6.0]
 
-OUTPUT_CSV  = f"results/graus_wiki_nos.csv"
-OUTPUT_PLOT = f"results/graus_plot_wiki_nos.png"
+OUTPUT_CSV  = f"results/_wiki_.csv"
+OUTPUT_PLOT = f"results/_plot_wiki_.png"
 
 
 
