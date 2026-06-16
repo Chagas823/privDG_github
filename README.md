@@ -2,8 +2,6 @@
 
 Framework for publishing directed graphs under edge differential privacy guarantees. Combines private community detection, intra-community synthesis via the exponential mechanism (LEVEL), and inter-community reconstruction with degree correction.
 
-> Chagas et al., EDBT 2026 — [GitHub](https://github.com/Chagas823/privDG_github)
-
 ---
 
 ## Installation
