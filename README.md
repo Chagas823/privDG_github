@@ -1,6 +1,6 @@
 # PrivDG: A Differentially Private Approach to Directed Graph Publishing
 
-Framework for publishing directed graphs under edge differential privacy guarantees. Combines private community detection, intra-community synthesis via the exponential mechanism (LEVEL), and inter-community reconstruction with degree correction.
+Approach for publishing directed graphs under edge differential privacy guarantees. Combines private community detection, intra-community synthesis via the exponential mechanism (LEVEL), and inter-community reconstruction with degree correction.
 
 ---
 
