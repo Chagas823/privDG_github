@@ -36,6 +36,6 @@ G_private = privDG(
 
 | Parameter | Description | Default in experiments |
 |-----------|-------------|------------------------|
-| `epsilon` | Total privacy budget ε | 1.0, 2.0, 4.0, 6.0 |
+| `epsilon` | Total privacy budget | 1.0, 2.0, 4.0, 6.0 |
 | `N` | Supernode size (Phase 1) | 10 |
 | `verbose` | Print phase logs | `False` |
