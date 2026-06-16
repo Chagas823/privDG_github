@@ -46,10 +46,10 @@ def privDG(G: nx.DiGraph, epsilon: float, N, verbose):
     epsilon5 = internal["epsilon5"]
 
     log(
-        f"Orçamento em 3 fases: "
-        f"comunidades={epsilon_comm:.4f}, "
-        f"exponencial={epsilon_intra:.4f}, "
-        f"reconstrução={epsilon_recon:.4f}"
+        f"Budget in 3 phases: "
+        f"communities={epsilon_comm:.4f}, "
+        f"level={epsilon_intra:.4f}, "
+        f"reconstruction={epsilon_recon:.4f}"
     )
 
     
