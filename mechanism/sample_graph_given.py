@@ -12,7 +12,7 @@ def sample_graph_given_t_hamming(G: nx.DiGraph, t: int) -> nx.DiGraph:
     m              = len(possible_edges)
 
     if t > m:
-        raise ValueError(f"t={t} > m={m}: impossível ter d_H = t.")
+        raise ValueError(f"t={t} > m={m}:")
 
     flipped_indices = random.sample(range(m), t)
     flipped_set     = {possible_edges[i] for i in flipped_indices}

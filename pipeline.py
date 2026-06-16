@@ -31,8 +31,8 @@ def privDG(G: nx.DiGraph, epsilon: float, N, verbose):
         if verbose:
             print(s)
 
-    print(f"número de nós: {G.number_of_nodes()}")
-    print(f"número de arestas: {G.number_of_edges()}")
+    print(f"number of nodes: {G.number_of_nodes()}")
+    print(f"number of edges: {G.number_of_edges()}")
 
     macro, internal = split_three_phase_budget(epsilon)
     epsilon_comm = macro["epsilon_comm"]
@@ -54,15 +54,15 @@ def privDG(G: nx.DiGraph, epsilon: float, N, verbose):
 
     
 
-    log("1) Divisão privada em comunidades")
+    log("1) Phase 1: Private Community Division")
 
     node_to_comm = community_initialization_directed(G, N, epsilon1)
     node_to_comm = community_adjustment_directed(G, node_to_comm, epsilon2)
 
     partition = comm_dict_to_lists(node_to_comm)
-    log(f"número de comunidades: {len(partition)}")
+    log(f"number of communities: {len(partition)}")
 
-    log("2) Geração privada intra-comunidade")
+    log("2) Phase 2: Private Intra-Community Graph Synthesis")
 
     private_subgraphs, community_info = apply_exponential_level(
         G,
@@ -71,8 +71,7 @@ def privDG(G: nx.DiGraph, epsilon: float, N, verbose):
     )
 
 
-    log("3) Reconstrução e ajuste estrutural")
-    print(f"quantidade subgrafos:{len(private_subgraphs)}")
+    log("3) Phase 3: Private Reconstruction and Structural Adjustment")
     noisy_counts = extract_inter_community_counts(G, partition, epsilon4)
     G_synth = reconnect_communities(private_subgraphs, partition, noisy_counts)
     out_target, in_target = compute_noisy_degrees(G, epsilon5)

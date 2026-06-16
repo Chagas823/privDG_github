@@ -24,7 +24,7 @@ def run_evaluation(G: nx.DiGraph) -> pd.DataFrame:
         print(f" --------------------- epsilon = {eps} ---------------------")
 
         for run in range(1, N_RUNS + 1):
-            print(f"  execução {run}/{N_RUNS} ...", end=" ", flush=True)
+            print(f"  {run}/{N_RUNS} ...", end=" ", flush=True)
 
             G_synth = privDG(G=G, epsilon=eps, N=N, verbose=True)
 
@@ -49,11 +49,11 @@ if __name__ == "__main__":
     os.makedirs("results", exist_ok=True)
 
     print(f"loading dataset: {DATASET}")
-    print(f"Grafo: {G.number_of_nodes()} nodes, {G.number_of_edges()} edges")
+    print(f"Graph: {G.number_of_nodes()} nodes, {G.number_of_edges()} edges")
 
     df = run_evaluation(G)
 
     df.to_csv(OUTPUT_CSV, index=False)
-    print(f"\nResultados brutos salvos em: {OUTPUT_CSV}")
+    print(f"\n{OUTPUT_CSV}")
 
 

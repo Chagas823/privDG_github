@@ -335,10 +335,7 @@ def _addition_phase(
     ):
 
         if no_progress >= no_progress_limit:
-            print(
-                f"[adição] sem progresso após {no_progress} tentativas — "
-                f"out_restante={total_out}, in_restante={total_in}"
-            )
+            
             break
 
         start_with_in = random.choice((True, False))
@@ -400,7 +397,6 @@ def degree_correction_coin_uniform_nodes(
     nodes = list(G_orig.nodes())
     Gc.add_nodes_from(nodes)
 
-    print(f"graus antes de tudo: {Gc.number_of_edges()}")
 
     out_deficit, out_excess = _split_residuals(out_target, Gc.out_degree)
     in_deficit, in_excess = _split_residuals(in_target, Gc.in_degree)
@@ -413,7 +409,7 @@ def degree_correction_coin_uniform_nodes(
         f"in_excess={sum(in_excess.values())}"
     )
 
-    print("[degree_correction] iniciando fase de remoção...")
+    print(" _removal_phase...")
 
     rem_out_rest, rem_in_rest = _removal_phase(
         Gc,
@@ -421,14 +417,8 @@ def degree_correction_coin_uniform_nodes(
         in_excess
     )
 
-    print(
-        "[degree_correction] após remoção — "
-        f"arestas={Gc.number_of_edges()}, "
-        f"out_excess_restante={rem_out_rest}, "
-        f"in_excess_restante={rem_in_rest}"
-    )
+    print(" _addition_phase...")
 
-    print("[degree_correction] iniciando fase de adição...")
 
     add_out_rest, add_in_rest = _addition_phase(
         Gc,
@@ -438,7 +428,7 @@ def degree_correction_coin_uniform_nodes(
     )
 
     print(
-        "[degree_correction] após adição — "
+        "[degree_correction] — "
         f"arestas={Gc.number_of_edges()}, "
         f"out_deficit_restante={add_out_rest}, "
         f"in_deficit_restante={add_in_rest}"
