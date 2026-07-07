@@ -75,7 +75,7 @@ def privDG(G: nx.DiGraph, epsilon: float, N, verbose):
     noisy_counts = extract_inter_community_counts(G, partition, epsilon4)
     G_synth = reconnect_communities(private_subgraphs, partition, noisy_counts)
     out_target, in_target = compute_noisy_degrees(G, epsilon5)
-    G_synth = degree_correction_coin_uniform_nodes(G_synth, G, epsilon5, out_target=out_target, in_target=in_target)
+    G_synth = degree_correction_coin_uniform_nodes(G_synth, G, None, out_target=out_target, in_target=in_target)
 
     return G_synth
 
